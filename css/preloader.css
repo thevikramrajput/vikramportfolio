@@ -1,0 +1,202 @@
+/* ============================================
+   CAR DASHBOARD SPEEDOMETER PRELOADER
+   ============================================ */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.preloader--fade-out {
+  opacity: 0;
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.preloader__hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--card-radius);
+  padding: 48px 64px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Accent corner brackets for the preloader dashboard */
+.preloader__hud::before,
+.preloader__hud::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.preloader__hud::before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.preloader__hud::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+}
+
+.preloader__hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+}
+
+/* Gear readout */
+.preloader__gear-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--divider);
+  background: var(--bg-primary);
+  padding: 12px 24px;
+  border-radius: 4px;
+  min-width: 90px;
+}
+
+.preloader__label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.preloader__gear {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  line-height: 1;
+}
+
+/* Speedometer readout */
+.preloader__speed-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.preloader__speed {
+  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -2px;
+  min-width: 190px;
+  text-align: right;
+}
+
+.preloader__unit {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Rev RPM LED segments */
+.preloader__rev-bar {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  background: var(--bg-primary);
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--divider);
+}
+
+.preloader__led {
+  flex: 1;
+  height: 24px;
+  background: rgba(30, 37, 56, 0.4); /* Dim segment */
+  border-radius: 2px;
+  transition: background-color 0.05s ease, box-shadow 0.05s ease;
+}
+
+/* RPM LED Colors when active */
+.preloader__led--cyan.active {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.preloader__led--blue.active {
+  background: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+
+.preloader__led--red.active {
+  background: #FF0055;
+  box-shadow: 0 0 10px #FF0055;
+}
+
+/* Blinking warning state at redline */
+.preloader__rev-bar.redline-blink .preloader__led.active {
+  animation: redlineFlash 0.1s infinite;
+}
+
+@keyframes redlineFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Status sub-logs */
+.preloader__status {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Scroll lock when loader is active */
+body.preloader-active {
+  overflow: hidden;
+}
+
+/* Names hidden before trigger */
+.preloader-hidden {
+  opacity: 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .preloader__hud {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .preloader__hud-top {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .preloader__speed {
+    font-size: 4rem;
+    min-width: 140px;
+  }
+}

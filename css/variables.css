@@ -1,0 +1,38 @@
+/* ============================================
+   DESIGN TOKENS — Softer Cyber Slate-Navy & Cyan
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Goldman:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Color Palette ── */
+  --bg-primary:         #0A0D14;  /* Softer deep slate navy background */
+  --bg-card:            #111520;  /* Deep navy-charcoal card background */
+  --bg-alt:             #0D101A;  /* Softer dark navy alt background */
+  
+  --accent-blue:        #003CD6;  /* Darker premium royal blue */
+  --accent-cyan:        #00C2FF;  /* Vibrant cyan highlight */
+  
+  --text-primary:       #F1F5F9;  /* Softer off-white text */
+  --text-secondary:     #CBD5E1;  /* Soft slate gray */
+  --text-muted:         #64748B;  /* Soft muted slate gray */
+  --divider:            #1E2538;  /* Softer navy-slate divider */
+
+  /* Legacy layout fallback mapping */
+  --accent:             var(--accent-blue);
+
+  /* ── Typography ── */
+  --font-hero:          'Boogaloo', cursive;
+  --font-heading:       'Goldman', sans-serif;
+  --font-body:          'Outfit', sans-serif;     /* Softer, highly legible geometric font */
+
+  /* ── Spacing ── */
+  --section-pad:        64px;
+  --card-gap:           32px;
+  --card-radius:        8px;
+
+  /* ── Transitions ── */
+  --transition-fast:    0.15s ease;
+  --transition-med:     0.3s ease;
+}

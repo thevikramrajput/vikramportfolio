@@ -1,0 +1,260 @@
+/* ============================================
+   ABOUT ME (ME CORE) SECTION — Cyber Slate-Navy
+   Centred, vertical log pointers layout
+   ============================================ */
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt); /* Alternating background */
+  position: relative;
+  overflow: hidden;
+  padding: 100px var(--section-pad);
+}
+
+.about__inner {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about__header {
+  text-align: center;
+}
+
+.about__label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.about__heading {
+  font-family: var(--font-hero);
+  font-size: clamp(4rem, 10vw, 6rem);
+  color: var(--text-primary);
+  line-height: 1.05;
+}
+
+/* ── Pointers Stack (Direct Personal Log style) ── */
+.about__pointers {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Left vertical accent line linking the items */
+.about__pointers::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 42px;
+  width: 1px;
+  background: var(--divider);
+  z-index: 1;
+}
+
+.about__pointer {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+  transition: transform var(--transition-med);
+}
+
+.about__pointer:hover {
+  transform: translateX(10px);
+}
+
+.about__pointer-num {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 6px 14px;
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  line-height: 1;
+  z-index: 3;
+  transition: color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.about__pointer:hover .about__pointer-num {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 194, 255, 0.2);
+}
+
+.about__pointer-text {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  padding-top: 2px;
+  transition: color var(--transition-fast);
+}
+
+.about__pointer:hover .about__pointer-text {
+  color: var(--text-primary);
+}
+
+/* ============================================
+   JOURNEY SECTION — Merged Timeline List
+   ============================================ */
+
+.journey {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary); /* Alternating background */
+  position: relative;
+  overflow: hidden;
+  padding: 100px var(--section-pad);
+}
+
+.journey__inner {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.journey__header {
+  text-align: center;
+}
+
+.journey__label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.journey__heading {
+  font-family: var(--font-hero);
+  font-size: clamp(4rem, 10vw, 6rem);
+  color: var(--text-primary);
+  line-height: 1.05;
+  letter-spacing: 1px;
+}
+
+.journey__pointers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.journey__pointer {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--card-radius);
+  padding: 28px 36px;
+  transition: border-color var(--transition-med), transform var(--transition-med), box-shadow var(--transition-med);
+  position: relative;
+}
+
+/* Cyan corner brackets on hover for journey rows */
+.journey__pointer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+  opacity: 0;
+  transform: scale(1.4);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.journey__pointer::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+  opacity: 0;
+  transform: scale(1.4);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.journey__pointer:hover {
+  border-color: var(--accent-blue);
+  transform: translateX(8px);
+  box-shadow: 0 0 20px rgba(0, 68, 255, 0.15);
+}
+
+.journey__pointer:hover::before,
+.journey__pointer:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.journey__pointer-icon {
+  font-family: var(--font-heading);
+  color: var(--accent-cyan);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.journey__pointer-text {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.journey__pointer-text strong {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about { padding: 80px 24px; }
+  .about__pointers { padding-left: 0; }
+  .about__pointers::before { left: 22px; }
+  .about__pointer { gap: 16px; }
+  .about__pointer-num { padding: 4px 10px; font-size: 1.1rem; }
+  
+  .journey { padding: 80px 24px; }
+  .journey__pointer { padding: 24px 20px; gap: 16px; }
+}

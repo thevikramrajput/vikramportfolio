@@ -1,0 +1,159 @@
+/* ============================================
+   HERO SECTION — Cyber Dark (Blue & Cyan)
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-primary);
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+/* Dot grid pattern */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--divider) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content */
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  z-index: 4;
+}
+
+/* Bitmoji */
+.hero__avatar {
+  flex-shrink: 0;
+  width: 340px;
+  position: relative;
+}
+
+.hero__avatar img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Name Block */
+.hero__name {
+  text-align: left;
+}
+
+.hero__greet {
+  font-family: var(--font-heading);
+  font-size: 1.2rem; /* Increased size to make it visible */
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 5px;
+  margin-bottom: 16px;
+  font-variant: all-small-caps;
+  text-transform: lowercase;
+}
+
+.hero__name-first {
+  font-family: var(--font-hero);
+  font-size: clamp(6rem, 12vw, 10rem);
+  color: var(--text-primary);
+  line-height: 0.85;
+  letter-spacing: 2px;
+}
+
+.hero__name-last {
+  font-family: var(--font-hero);
+  font-size: clamp(6rem, 12vw, 10rem);
+  color: var(--accent-blue);
+  line-height: 0.85;
+  letter-spacing: 2px;
+}
+
+.hero__tagline {
+  margin-top: 24px;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+/* Bottom strip */
+.hero__bottom-strip {
+  position: absolute;
+  bottom: 40px;
+  left: var(--section-pad);
+  right: var(--section-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--divider);
+  padding-top: 18px;
+  z-index: 6;
+}
+
+.hero__hud-loc {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.hero__hud-scroll {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  animation: softBlink 2.5s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero__content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .hero__avatar { width: 260px; }
+  .hero__name { text-align: center; }
+  .hero__bottom-strip {
+    flex-direction: column;
+    gap: 12px;
+    bottom: 24px;
+  }
+}
+
+/* Hero CTA button styling */
+.hero__btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--accent-cyan);
+  border-radius: var(--card-radius);
+  color: var(--accent-cyan);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all var(--transition-med);
+}
+
+.hero__btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+  transform: translateY(-2px);
+}
+

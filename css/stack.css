@@ -1,0 +1,206 @@
+/* ============================================
+   STACK / TOOLKIT — Cyber Dark Terminal
+   Accented cards with cyan corner brackets
+   Hover reveals tech and blurs others
+   ============================================ */
+
+.stack {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-alt); /* Alternating section background */
+  position: relative;
+  overflow: hidden;
+  padding: 100px var(--section-pad);
+}
+
+.stack__header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.stack__label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.stack__title {
+  font-family: var(--font-hero);
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  color: var(--text-primary);
+}
+
+/* ── Stack Grid (Breathable & Handles hover states) ── */
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* When the grid is hovered, blur and fade out the cards that are NOT hovered */
+.stack__grid:hover .stack-card:not(:hover) {
+  filter: blur(4px);
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+
+/* ── Stack Card ── */
+.stack-card {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  padding: 40px 36px;
+  border: 1px solid var(--divider);
+  transition: border-color var(--transition-med), transform var(--transition-med), box-shadow var(--transition-med), filter var(--transition-med), opacity var(--transition-med);
+  position: relative;
+  overflow: visible;
+  z-index: 5;
+}
+
+/* Cyan Corner Brackets on Hover */
+.stack-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+  opacity: 0;
+  transform: scale(1.4);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stack-card::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+  opacity: 0;
+  transform: scale(1.4);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Hovered Card: scale up, front layer, highlight border, add glow */
+.stack-card:hover {
+  transform: scale(1.08) translateY(-5px);
+  z-index: 15; /* Bring to front */
+  box-shadow: 0 0 35px rgba(0, 68, 255, 0.25);
+}
+
+.stack-card:hover::before,
+.stack-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover border colors mapped to blue or cyan accents */
+.stack-card--ai:hover { border-color: var(--accent-blue); }
+.stack-card--web:hover { border-color: var(--accent-cyan); }
+.stack-card--rpa:hover { border-color: var(--accent-cyan); }
+.stack-card--dev:hover { border-color: var(--accent-blue); }
+
+/* Radar / sonar circle SVG — decorative */
+.stack-card__radar {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.stack-card__radar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.stack-card__name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0px; /* Reset margin since tech list is collapsed by default */
+  text-transform: uppercase;
+  transition: margin var(--transition-med);
+}
+
+/* Adjust title margin on hover when tech collapses open */
+.stack-card:hover .stack-card__name {
+  margin-bottom: 20px;
+}
+
+/* Category header colors alternating blue and cyan */
+.stack-card--ai .stack-card__name { color: var(--accent-blue); }
+.stack-card--web .stack-card__name { color: var(--accent-cyan); }
+.stack-card--rpa .stack-card__name { color: var(--accent-cyan); }
+.stack-card--dev .stack-card__name { color: var(--accent-blue); }
+
+/* ── Technologies List (Collapsed by default, reveals on hover) ── */
+.stack-card__techs {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  
+  /* Collapsed properties */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: opacity 0.3s ease, max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease;
+}
+
+/* Hover reveals tech specs */
+.stack-card:hover .stack-card__techs {
+  max-height: 150px; /* Large enough to reveal details */
+  opacity: 1;
+  margin-top: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .stack__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  /* For mobile, keep techs visible since hover is less common */
+  .stack-card__techs {
+    max-height: none;
+    opacity: 1;
+    margin-top: 16px;
+  }
+  .stack-card__name {
+    margin-bottom: 20px;
+  }
+  .stack-card {
+    padding: 32px 24px;
+  }
+  .stack__grid:hover .stack-card:not(:hover) {
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+}
