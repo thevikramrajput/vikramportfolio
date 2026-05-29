@@ -77,7 +77,7 @@
 
 /* Page wrapper for paginated collage */
 .projects__page {
-  flex: 0 0 clamp(900px, 80vw, 1200px);
+  flex: 0 0 clamp(900px, 100%, 1200px);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto auto; /* Explicitly define two auto-height rows */
@@ -198,6 +198,7 @@
 /* Category tag */
 .project-card__category {
   display: inline-block;
+  align-self: flex-start; /* Shrink to fit text content width instead of stretching */
   margin-bottom: 16px;
   color: var(--accent-blue);
   border: 1px solid rgba(0, 68, 255, 0.3);
