@@ -312,3 +312,28 @@
     padding: 32px 24px;
   }
 }
+
+/* Custom Cyberpunk Form Errors & Disabled States */
+.contact__error-message {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: #FF2A5F; /* Cyber Pink/Red error color */
+  margin-top: 8px;
+  letter-spacing: 1px;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact__input.is-invalid,
+.contact__textarea.is-invalid {
+  border-bottom-color: #FF2A5F !important;
+}
+
+.contact__submit:disabled {
+  background: var(--divider);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
