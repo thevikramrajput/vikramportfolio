@@ -20,7 +20,7 @@
   margin-bottom: 60px;
   position: relative;
   z-index: 2;
-  padding: 0 clamp(40px, 12vw, 150px);
+  padding: 0 clamp(50px, 15vw, 200px);
 }
 
 .projects__label {
@@ -43,9 +43,11 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  align-items: flex-start; /* Prevent page height stretching and vertical card overlap */
   gap: 60px; /* Generous gap between pages */
   width: 100%;
-  padding: 20px clamp(40px, 12vw, 150px) 40px;
+  padding: 20px clamp(50px, 15vw, 200px) 40px;
+  scroll-padding: 0 clamp(50px, 15vw, 200px); /* Keep beautiful margins when scroll-snapping left */
   position: relative;
   z-index: 2;
   scroll-snap-type: x mandatory;
@@ -78,7 +80,8 @@
   flex: 0 0 clamp(900px, 80vw, 1200px);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 20px 30px;
+  grid-template-rows: auto auto; /* Explicitly define two auto-height rows */
+  gap: 30px 40px; /* Row gap and Column gap */
   scroll-snap-align: start;
   position: relative;
 }
@@ -87,18 +90,19 @@
 @media (min-width: 901px) {
   .projects__page .project-card:nth-child(1) {
     grid-column: span 7;
+    margin-top: 0;
   }
   .projects__page .project-card:nth-child(2) {
     grid-column: span 5;
-    margin-top: 30px;
+    margin-top: 40px; /* Shift right column down to stagger */
   }
   .projects__page .project-card:nth-child(3) {
     grid-column: span 5;
-    margin-top: -20px;
+    margin-top: 0;
   }
   .projects__page .project-card:nth-child(4) {
     grid-column: span 7;
-    margin-top: 10px;
+    margin-top: 40px; /* Shift right column down to stagger */
   }
 }
 
@@ -114,7 +118,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  min-height: 400px;
 }
 
 /* Cyan Corner Brackets on Hover */
