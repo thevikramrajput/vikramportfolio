@@ -12,15 +12,19 @@
   // ── Smooth Scroll on click ──
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
+      
+      // Only smooth scroll for internal section anchors
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(targetId);
 
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        navLinksContainer.classList.remove('open');
       }
-
-      navLinksContainer.classList.remove('open');
     });
   });
 
