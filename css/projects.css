@@ -20,7 +20,7 @@
   margin-bottom: 60px;
   position: relative;
   z-index: 2;
-  padding: 0 var(--section-pad);
+  padding: 0 clamp(40px, 12vw, 150px);
 }
 
 .projects__label {
@@ -45,7 +45,7 @@
   overflow-x: auto;
   gap: 60px; /* Generous gap between pages */
   width: 100%;
-  padding: 20px var(--section-pad) 40px;
+  padding: 20px clamp(40px, 12vw, 150px) 40px;
   position: relative;
   z-index: 2;
   scroll-snap-type: x mandatory;
