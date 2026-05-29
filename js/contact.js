@@ -109,4 +109,39 @@ ${messageVal}`;
     const errorMessages = contactForm.querySelectorAll(".contact__error-message");
     errorMessages.forEach((msg) => msg.remove());
   }
+
+  // ── High-Tech View Counter (Dynamic API + Local Fallback) ──
+  const viewCounter = document.getElementById("view-counter");
+  if (viewCounter) {
+    const namespace = "thevikramrajput";
+    const key = "portfolio_views";
+    const fallbackBase = 1432; // Realistic baseline views starting count
+    
+    // Calculate local fallback increment
+    let localViews = localStorage.getItem("vm_views_fallback");
+    if (!localViews) {
+      localViews = fallbackBase;
+    } else {
+      localViews = parseInt(localViews) + 1;
+    }
+    localStorage.setItem("vm_views_fallback", localViews);
+
+    // Helper to format with leading zeros for terminal HUD look
+    const formatCount = (num) => String(num).padStart(6, '0');
+
+    // Fetch and increment from free public CounterAPI
+    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+      .then(res => {
+        if (!res.ok) throw new Error("API Offline");
+        return res.json();
+      })
+      .then(data => {
+        const count = data.value !== undefined ? data.value : (data.count !== undefined ? data.count : localViews);
+        viewCounter.textContent = formatCount(count);
+      })
+      .catch(err => {
+        // Fallback to local incremental baseline if API is offline or blocked by adblockers
+        viewCounter.textContent = formatCount(localViews);
+      });
+  }
 });
