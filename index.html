@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/nav.css?v=1.1">
-  <link rel="stylesheet" href="css/hero.css?v=1.1">
+  <link rel="stylesheet" href="css/nav.css?v=1.2">
+  <link rel="stylesheet" href="css/hero.css?v=1.2">
   <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/projects.css?v=1.1">
+  <link rel="stylesheet" href="css/projects.css?v=1.2">
   <link rel="stylesheet" href="css/stack.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/preloader.css">
@@ -192,136 +192,142 @@
     </div>
 
     <div class="projects__grid reveal">
-      <!-- Project 1 — AI FEEDBACK ANALYZER -->
-      <article class="project-card">
-        <div class="project-card__circuit">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 30 H20 L25 20 H40 L45 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M30 5 V15 L25 20" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M45 30 L50 40 V55" stroke="var(--divider)" stroke-width="1.5"/>
-            <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
-            <circle cx="45" cy="30" r="2" fill="var(--divider)"/>
-          </svg>
-        </div>
-        <span class="project-card__number">01</span>
-        <a href="https://github.com/thevikramrajput/ai-feedback-analyzer" class="project-card__link" target="_blank" rel="noopener" aria-label="View AI Product Feedback Analyzer project">↗</a>
-        <span class="pill project-card__category">AI / ML</span>
-        <h3 class="project-card__name">FEEDBACK ANALYZER</h3>
-        <p class="project-card__desc">
-          AI pipeline hosted on HuggingFace that processes 10K+ reviews, converting unstructured feedback into structured product insights using sentiment classification and topic clustering.
-        </p>
-        <div class="project-card__tags">
-          <span class="pill">Python</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Transformers</span>
-          <span class="pill">Scikit-learn</span>
-        </div>
-      </article>
+      <!-- PAGE 1 -->
+      <div class="projects__page">
+        <!-- Project 1 — AI FEEDBACK ANALYZER -->
+        <article class="project-card">
+          <div class="project-card__circuit">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 30 H20 L25 20 H40 L45 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M30 5 V15 L25 20" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M45 30 L50 40 V55" stroke="var(--divider)" stroke-width="1.5"/>
+              <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
+              <circle cx="45" cy="30" r="2" fill="var(--divider)"/>
+            </svg>
+          </div>
+          <span class="project-card__number">01</span>
+          <a href="https://github.com/thevikramrajput/ai-feedback-analyzer" class="project-card__link" target="_blank" rel="noopener" aria-label="View AI Product Feedback Analyzer project">↗</a>
+          <span class="pill project-card__category">AI / ML</span>
+          <h3 class="project-card__name">FEEDBACK ANALYZER</h3>
+          <p class="project-card__desc">
+            AI pipeline hosted on HuggingFace that processes 10K+ reviews, converting unstructured feedback into structured product insights using sentiment classification and topic clustering.
+          </p>
+          <div class="project-card__tags">
+            <span class="pill">Python</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Transformers</span>
+            <span class="pill">Scikit-learn</span>
+          </div>
+        </article>
 
-      <!-- Project 2 — HEALIN -->
-      <article class="project-card">
-        <div class="project-card__circuit">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 30 H15 L20 15 H35 L40 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M20 15 V5" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M40 30 V45 H50" stroke="var(--divider)" stroke-width="1.5"/>
-            <circle cx="20" cy="15" r="2" fill="var(--divider)"/>
-            <circle cx="40" cy="30" r="2" fill="var(--divider)"/>
-          </svg>
-        </div>
-        <span class="project-card__number">02</span>
-        <a href="https://github.com/thevikramrajput/healin" class="project-card__link" target="_blank" rel="noopener" aria-label="View HEALIN project">↗</a>
-        <span class="pill project-card__category">HEALTHTECH</span>
-        <h3 class="project-card__name">HEALIN</h3>
-        <p class="project-card__desc">
-          RAG-based Medical AI Assistant integrating Pinecone and gemini-1.5-flash to deliver accurate, context-aware diagnostics and semantic notes parsing via a Flask streaming API.
-        </p>
-        <div class="project-card__tags">
-          <span class="pill">Flask</span>
-          <span class="pill">LangChain</span>
-          <span class="pill">Pinecone</span>
-          <span class="pill">Gemini</span>
-          <span class="pill">NLP</span>
-        </div>
-      </article>
+        <!-- Project 2 — HEALIN -->
+        <article class="project-card">
+          <div class="project-card__circuit">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 30 H15 L20 15 H35 L40 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M20 15 V5" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M40 30 V45 H50" stroke="var(--divider)" stroke-width="1.5"/>
+              <circle cx="20" cy="15" r="2" fill="var(--divider)"/>
+              <circle cx="40" cy="30" r="2" fill="var(--divider)"/>
+            </svg>
+          </div>
+          <span class="project-card__number">02</span>
+          <a href="https://github.com/thevikramrajput/healin" class="project-card__link" target="_blank" rel="noopener" aria-label="View HEALIN project">↗</a>
+          <span class="pill project-card__category">HEALTHTECH</span>
+          <h3 class="project-card__name">HEALIN</h3>
+          <p class="project-card__desc">
+            RAG-based Medical AI Assistant integrating Pinecone and gemini-1.5-flash to deliver accurate, context-aware diagnostics and semantic notes parsing via a Flask streaming API.
+          </p>
+          <div class="project-card__tags">
+            <span class="pill">Flask</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">Pinecone</span>
+            <span class="pill">Gemini</span>
+            <span class="pill">NLP</span>
+          </div>
+        </article>
 
-      <!-- Project 3 — STOCKFLUX -->
-      <article class="project-card">
-        <div class="project-card__circuit">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 35 H18 L25 20 H42 L48 35 H55" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M25 20 L30 10 V5" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M48 35 L52 45" stroke="var(--divider)" stroke-width="1.5"/>
-            <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
-            <circle cx="48" cy="35" r="2" fill="var(--divider)"/>
-          </svg>
-        </div>
-        <span class="project-card__number">03</span>
-        <a href="https://github.com/thevikramrajput/Stock-Market-Prediction" class="project-card__link" target="_blank" rel="noopener" aria-label="View STOCKFLUX project">↗</a>
-        <span class="pill project-card__category">FINTECH</span>
-        <h3 class="project-card__name">STOCKFLUX</h3>
-        <p class="project-card__desc">
-          Real-time stock trend prediction & analysis platform built with Streamlit and powered by an advanced LSTM model trained on 5+ years of historical data.
-        </p>
-        <div class="project-card__tags">
-          <span class="pill">Python</span>
-          <span class="pill">Streamlit</span>
-          <span class="pill">LSTM</span>
-          <span class="pill">Pandas</span>
-        </div>
-      </article>
+        <!-- Project 3 — STOCKFLUX -->
+        <article class="project-card">
+          <div class="project-card__circuit">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 35 H18 L25 20 H42 L48 35 H55" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M25 20 L30 10 V5" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M48 35 L52 45" stroke="var(--divider)" stroke-width="1.5"/>
+              <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
+              <circle cx="48" cy="35" r="2" fill="var(--divider)"/>
+            </svg>
+          </div>
+          <span class="project-card__number">03</span>
+          <a href="https://github.com/thevikramrajput/Stock-Market-Prediction" class="project-card__link" target="_blank" rel="noopener" aria-label="View STOCKFLUX project">↗</a>
+          <span class="pill project-card__category">FINTECH</span>
+          <h3 class="project-card__name">STOCKFLUX</h3>
+          <p class="project-card__desc">
+            Real-time stock trend prediction & analysis platform built with Streamlit and powered by an advanced LSTM model trained on 5+ years of historical data.
+          </p>
+          <div class="project-card__tags">
+            <span class="pill">Python</span>
+            <span class="pill">Streamlit</span>
+            <span class="pill">LSTM</span>
+            <span class="pill">Pandas</span>
+          </div>
+        </article>
 
-      <!-- Project 4 — GNSS PREDICTOR -->
-      <article class="project-card">
-        <div class="project-card__circuit">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 25 H20 L28 38 H45 L50 25 H55" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M28 38 V50" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M50 25 V10" stroke="var(--divider)" stroke-width="1.5"/>
-            <circle cx="28" cy="38" r="2" fill="var(--divider)"/>
-            <circle cx="50" cy="25" r="2" fill="var(--divider)"/>
-          </svg>
-        </div>
-        <span class="project-card__number">04</span>
-        <a href="https://github.com/thevikramrajput/GNSS" class="project-card__link" target="_blank" rel="noopener" aria-label="View GNSS PREDICTOR project">↗</a>
-        <span class="pill project-card__category">GEOSPATIAL AI</span>
-        <h3 class="project-card__name">GNSS PREDICTOR</h3>
-        <p class="project-card__desc">
-          End-to-end satellite error prediction system using LSTM models trained on 1GB+ telemetry dataset, visualised with a custom interactive React dashboard.
-        </p>
-        <div class="project-card__tags">
-          <span class="pill">Flask</span>
-          <span class="pill">React</span>
-          <span class="pill">LSTM</span>
-          <span class="pill">Python</span>
-        </div>
-      </article>
+        <!-- Project 4 — GNSS PREDICTOR -->
+        <article class="project-card">
+          <div class="project-card__circuit">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 25 H20 L28 38 H45 L50 25 H55" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M28 38 V50" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M50 25 V10" stroke="var(--divider)" stroke-width="1.5"/>
+              <circle cx="28" cy="38" r="2" fill="var(--divider)"/>
+              <circle cx="50" cy="25" r="2" fill="var(--divider)"/>
+            </svg>
+          </div>
+          <span class="project-card__number">04</span>
+          <a href="https://github.com/thevikramrajput/GNSS" class="project-card__link" target="_blank" rel="noopener" aria-label="View GNSS PREDICTOR project">↗</a>
+          <span class="pill project-card__category">GEOSPATIAL AI</span>
+          <h3 class="project-card__name">GNSS PREDICTOR</h3>
+          <p class="project-card__desc">
+            End-to-end satellite error prediction system using LSTM models trained on 1GB+ telemetry dataset, visualised with a custom interactive React dashboard.
+          </p>
+          <div class="project-card__tags">
+            <span class="pill">Flask</span>
+            <span class="pill">React</span>
+            <span class="pill">LSTM</span>
+            <span class="pill">Python</span>
+          </div>
+        </article>
+      </div>
 
-      <!-- Project 5 — CODEDNA -->
-      <article class="project-card">
-        <div class="project-card__circuit">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 30 H20 L25 20 H40 L45 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M30 5 V15 L25 20" stroke="var(--divider)" stroke-width="1.5"/>
-            <path d="M45 30 L50 40 V55" stroke="var(--divider)" stroke-width="1.5"/>
-            <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
-            <circle cx="45" cy="30" r="2" fill="var(--divider)"/>
-          </svg>
-        </div>
-        <span class="project-card__number">05</span>
-        <a href="https://github.com/thevikramrajput/endee" class="project-card__link" target="_blank" rel="noopener" aria-label="View CODEDNA project">↗</a>
-        <span class="pill project-card__category">AI / DEVELOPER TOOLS</span>
-        <h3 class="project-card__name">CodeDNA</h3>
-        <p class="project-card__desc">
-          AI-powered codebase genome analyzer that parses and maps source code (AST structures) into high-dimensional vector spaces using the Endee vector database for semantic searching, vulnerability detection, and meaning-based refactoring.
-        </p>
-        <div class="project-card__tags">
-          <span class="pill">Endee DB</span>
-          <span class="pill">Vector Search</span>
-          <span class="pill">AST Parsing</span>
-          <span class="pill">Python</span>
-        </div>
-      </article>
+      <!-- PAGE 2 -->
+      <div class="projects__page">
+        <!-- Project 5 — CODEDNA -->
+        <article class="project-card">
+          <div class="project-card__circuit">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 30 H20 L25 20 H40 L45 30 H55" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M30 5 V15 L25 20" stroke="var(--divider)" stroke-width="1.5"/>
+              <path d="M45 30 L50 40 V55" stroke="var(--divider)" stroke-width="1.5"/>
+              <circle cx="25" cy="20" r="2" fill="var(--divider)"/>
+              <circle cx="45" cy="30" r="2" fill="var(--divider)"/>
+            </svg>
+          </div>
+          <span class="project-card__number">05</span>
+          <a href="https://github.com/thevikramrajput/endee" class="project-card__link" target="_blank" rel="noopener" aria-label="View CODEDNA project">↗</a>
+          <span class="pill project-card__category">AI / DEVELOPER TOOLS</span>
+          <h3 class="project-card__name">CodeDNA</h3>
+          <p class="project-card__desc">
+            AI-powered codebase genome analyzer that parses and maps source code (AST structures) into high-dimensional vector spaces using the Endee vector database for semantic searching, vulnerability detection, and meaning-based refactoring.
+          </p>
+          <div class="project-card__tags">
+            <span class="pill">Endee DB</span>
+            <span class="pill">Vector Search</span>
+            <span class="pill">AST Parsing</span>
+            <span class="pill">Python</span>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
